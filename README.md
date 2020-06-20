@@ -52,7 +52,7 @@ VALUES (4, 'Brown');
 
 Both the tables have some common colors such as Red and Green. Let’s call the BALLOON_A the left table and BALLOON_B the right table.
 
-## Oracle Inner join
+## Oracle inner join
 
 The inner join selects records that have matching values in both tables.
 
