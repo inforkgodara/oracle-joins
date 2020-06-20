@@ -71,7 +71,7 @@ INNER JOIN BALLOON_B B ON A.COLOR = B.COLOR;
 
 The above SQL query joins both tables and returns rows from the left table that match with the rows from the right table as per the selected criteria in on clause.
 
-##Oracle left join
+## Oracle left join
 
 The left join returns all records from the left table (BALLOON_A), and the matched records from the right table (BALLOON_B). The result is NULL from the right side, if there is no match.
 
