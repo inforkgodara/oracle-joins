@@ -6,10 +6,11 @@ Oracle supports inner join, left join, right join, full outer join and cross joi
 
 You can join a table to itself to query hierarchical data using an inner join, left join, or right join. This kind of join is known as self-join.
 
-##Setting up sample tables
+## Setting up sample tables
 
 We created two new tables with the same structure for the demonstration using Sample-tables.sql script. The SQL script is under followed.
 
+```
 -- Create BALLOON_A table
 CREATE TABLE BALLOON_A (
     ID INT PRIMARY KEY,
@@ -47,15 +48,17 @@ VALUES (3, 'Cyan');
 
 INSERT INTO BALLOON_B (ID, COLOR)
 VALUES (4, 'Brown');
+```
 
 Both the tables have some common colors such as Red and Green. Let’s call the BALLOON_A the left table and BALLOON_B the right table.
 
-##Oracle Inner join
+## Oracle Inner join
 
 The inner join selects records that have matching values in both tables.
 
 The following statement joins the left table to the right table using the values in the color column.
 
+```
 SELECT
     A.ID ID_A,
     A.COLOR COLOR_A,
@@ -64,6 +67,7 @@ SELECT
 FROM
     BALLOON_A A
 INNER JOIN BALLOON_B B ON A.COLOR = B.COLOR;
+```
 
 The above SQL query joins both tables and returns rows from the left table that match with the rows from the right table as per the selected criteria in on clause.
 
@@ -73,6 +77,7 @@ The left join returns all records from the left table (BALLOON_A), and the match
 
 The following statement joins the left table with the right table using a left join.
 
+```
 SELECT
     A.ID ID_A,
     A.COLOR COLOR_A,
@@ -81,15 +86,17 @@ SELECT
 FROM
     BALLOON_A A
 LEFT JOIN BALLOON_B B ON A.COLOR = B.COLOR;
+```
 
 The above SQL query returns all rows from the left table with the matching rows if available from the right table. If there is no matching row found from the right table, the left join will have null values for the columns of the right table.
 
-##Oracle right join
+## Oracle right join
 
 The right join returns all records from the right table (BALLOON_B), and the matched records from the left table (BALLOON_A). The result is NULL from the left side when there is no match.
 
 The following example use right join to join the left table to the right table.
 
+```
 SELECT
     A.ID ID_A,
     A.COLOR COLOR_A,
@@ -98,15 +105,17 @@ SELECT
 FROM
     BALLOON_A A
 RIGHT JOIN BALLOON_B B ON A.COLOR = B.COLOR;
+```
 
 The above sql query returns all rows from the right table with the matching rows if available from the left table. If there is no matching row found from the left table, the right join will have null values for the columns of the left table.
 
-##Oracle full outer join
+## Oracle full outer join
 
 The full outer join returns a result set that contains all rows from both left and right tables, with the matching rows from both sides where available.
 
 The following example shows the full outer join of the left and right tables.
 
+```
 SELECT
     A.ID ID_A,
     A.COLOR COLOR_A,
@@ -115,5 +124,6 @@ SELECT
 FROM
     BALLOON_A A
 FULL OUTER JOIN BALLOON_B B ON A.COLOR = B.COLOR;
+```
 
 The above SQL query returns all rows from the right and left table with the matching or not matching rows.
