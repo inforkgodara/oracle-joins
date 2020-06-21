@@ -70,8 +70,8 @@ INNER JOIN BALLOON_B B ON A.COLOR = B.COLOR;
 
 ID_A	COLOR_A	ID_B	COLOR_B
 ----	-------	----	-------
-2		Green	1		Green
-1		Red		2		Red
+2	Green	1	Green
+1	Red	2	Red
 
 2 rows selected.
 ```
@@ -96,10 +96,10 @@ LEFT JOIN BALLOON_B B ON A.COLOR = B.COLOR;
 
 ID_A	COLOR_A	ID_B	COLOR_B
 ----	-------	----	-------
-2		Green	1		Green
-1		Red		2		Red
-3		Blue		
-4		Purple		
+2	Green	1	Green
+1	Red	2	Red
+3	Blue	
+4	Purple	
 
 4 rows selected.
 ```
@@ -124,10 +124,10 @@ RIGHT JOIN BALLOON_B B ON A.COLOR = B.COLOR;
 
 ID_A	COLOR_A	ID_B	COLOR_B
 ----	-------	----	-------
-1		Red		2		Red
-2		Green	1		Green
-				4		Brown
-				3		Cyan
+1	Red	2	Red
+2	Green	1	Green
+		4	Brown
+		3	Cyan
 
 4 rows selected.
 ```
@@ -152,12 +152,12 @@ FULL OUTER JOIN BALLOON_B B ON A.COLOR = B.COLOR;
 
 ID_A	COLOR_A	ID_B	COLOR_B
 ----	-------	----	-------
-2		Green	1		Green
-1		Red		2		Red
-				3		Cyan
-				4		Brown
-3		Blue		
-4		Purple		
+2	Green	1	Green
+1	Red	2	Red
+		3	Cyan
+		4	Brown
+3	Blue		
+4	Purple		
 
 6 rows selected.
 ```
