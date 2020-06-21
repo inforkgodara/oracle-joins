@@ -67,6 +67,13 @@ SELECT
 FROM
     BALLOON_A A
 INNER JOIN BALLOON_B B ON A.COLOR = B.COLOR;
+
+ID_A	COLOR_A	ID_B	COLOR_B
+----	-------	----	-------
+2		Green	1		Green
+1		Red		2		Red
+
+2 rows selected.
 ```
 
 The above SQL query joins both tables and returns rows from the left table that match with the rows from the right table as per the selected criteria in on clause.
@@ -86,6 +93,15 @@ SELECT
 FROM
     BALLOON_A A
 LEFT JOIN BALLOON_B B ON A.COLOR = B.COLOR;
+
+ID_A	COLOR_A	ID_B	COLOR_B
+----	-------	----	-------
+2		Green	1		Green
+1		Red		2		Red
+3		Blue		
+4		Purple		
+
+4 rows selected.
 ```
 
 The above SQL query returns all rows from the left table with the matching rows if available from the right table. If there is no matching row found from the right table, the left join will have null values for the columns of the right table.
@@ -105,6 +121,15 @@ SELECT
 FROM
     BALLOON_A A
 RIGHT JOIN BALLOON_B B ON A.COLOR = B.COLOR;
+
+ID_A	COLOR_A	ID_B	COLOR_B
+----	-------	----	-------
+1		Red		2		Red
+2		Green	1		Green
+				4		Brown
+				3		Cyan
+
+4 rows selected.
 ```
 
 The above sql query returns all rows from the right table with the matching rows if available from the left table. If there is no matching row found from the left table, the right join will have null values for the columns of the left table.
@@ -124,6 +149,17 @@ SELECT
 FROM
     BALLOON_A A
 FULL OUTER JOIN BALLOON_B B ON A.COLOR = B.COLOR;
+
+ID_A	COLOR_A	ID_B	COLOR_B
+----	-------	----	-------
+2		Green	1		Green
+1		Red		2		Red
+				3		Cyan
+				4		Brown
+3		Blue		
+4		Purple		
+
+6 rows selected.
 ```
 
 The above SQL query returns all rows from the right and left table with the matching or not matching rows.
